@@ -1,33 +1,24 @@
-# Infraestructura como Código (IaC) con Terraform, AWS y Docker 🐳🚀
+# Infraestructura de Nivel Senior con Terraform, AWS y Docker 🐳🔝
 
-Este proyecto automatiza el despliegue de una arquitectura web moderna y escalable en **Amazon Web Services (AWS)** utilizando **Terraform** y contenedores **Docker**.
+Este proyecto despliega una infraestructura de nube completa, utilizando la metodología de **Infraestructura como Código (IaC)** para crear redes personalizadas y contenedores dockerizados.
 
-## 🏗️ Arquitectura y Tecnologías
-- **Infraestructura**: Despliegue automatizado de instancias **EC2** con Amazon Linux 2.
-- **Contenedores (Docker)**: Configuración automática del motor Docker en el arranque de las instancias.
-- **Orquestación Básica**: Despliegue de contenedores **Nginx** personalizados mediante scripts de `user_data`.
-- **Seguridad**: Reglas de Firewall (Security Groups) optimizadas para tráfico web.
-- **Escalabilidad**: Implementación de lógica de múltiples nodos usando la propiedad `count`.
+## 🏗️ Ingeniería de Redes (VPC)
+A diferencia de proyectos básicos, este repositorio construye una arquitectura de red aislada y segura:
+- **VPC Custom**: Una red virtual privada (10.0.0.0/16) exclusiva para la aplicación.
+- **Networking Pro**: Implementación de **Subnets públicas**, **Internet Gateway** propio y **Tablas de Rutas** personalizadas.
+- **Docker Orchestration**: Instalación y ejecución automatizada de contenedores **Nginx** en cada servidor.
+- **Seguridad Dinámica**: Grupos de seguridad exclusivos atados a la VPC personalizada.
 
-## 🧠 Conocimientos Aplicados
-Este repositorio demuestra habilidades avanzadas en:
-- **Terraform**: Uso de proveedores, recursos, data sources, variables secretas (`tfvars`) y gestión de estado.
-- **Cloud Computing (AWS)**: Manejo de cómputo (EC2), redes (VPC, Subnets) y seguridad.
-- **DevOps**: Automatización de la instalación y ejecución de contenedores Docker en entornos de nube.
-- **Git/GitHub**: Flujo de trabajo profesional y protección de secretos mediante `.gitignore`.
-
-## 🚀 Cómo ejecutarlo
-1. Clona este repositorio.
-2. Crea tu archivo `terraform.tfvars`:
-   ```hcl
-   aws_access_key = "TU_ACCESS_KEY"
-   aws_secret_key = "TU_SECRET_KEY"
-   ```
-3. Inicia y aplica:
+## 🚀 Cómo ejecutar
+1. Clona el proyecto.
+2. Agrega tus llaves en `terraform.tfvars`.
+3. Ejecuta:
    ```bash
    terraform init
    terraform apply -auto-approve
    ```
 
-## 🔒 Control de Costos y Seguridad
-Este proyecto sigue las mejores prácticas de seguridad, ocultando credenciales sensibles y permitiendo la destrucción total de los recursos con un solo comando (`terraform destroy`), garantizando que la cuenta de AWS se mantenga dentro del **Free Tier**.
+## 🧠 Valor Agregado para el Negocio
+- **Aislamiento Total**: Seguridad mejorada al no usar configuraciones por defecto de AWS.
+- **Escalabilidad**: Red preparada para crecer horizontalmente.
+- **Automatización**: Despliegue de 0 a 100 en menos de 2 minutos.
